@@ -1,0 +1,28 @@
+{
+  "name": "arturomtm",
+  "version": "1.0.0",
+  "description": "a simple baseapp for react/flux/falcor",
+  "main": "app/entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "flux",
+    "falcor"
+  ],
+  "author": "arturomtm (redradix)",
+  "license": "MIT",
+  "dependencies": {
+    "eventemitter3": "^1.1.1",
+    "falcor": "^0.1.15",
+    "flux": "^2.1.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "webpack": "^1.12.9"
+  }
+}
