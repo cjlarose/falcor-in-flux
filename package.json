@@ -4,7 +4,11 @@
   "description": "a simple baseapp for react/flux/falcor",
   "main": "app/entry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "assets": "cp -r assets/* build/",
+    "webpack": "webpack --progress --colors",
+    "start": "node node_modules/http-server/bin/http-server build",
+    "build": "npm run assets && npm run webpack && npm start"
   },
   "keywords": [
     "react",
@@ -23,6 +27,9 @@
   "devDependencies": {
     "babel-core": "^6.3.21",
     "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "http-server": "^0.8.5",
     "webpack": "^1.12.9"
   }
 }
