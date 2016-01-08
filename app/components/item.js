@@ -35,7 +35,7 @@ class Item extends React.Component {
   }
   updateState(id) {
     FalcorStore
-      .get(["products", id, "features", {from:0, to: 10}, ["name", "likes", "desc"]])
+      .get(["products", id, "features", {from:0, to: 10}, ["name", "likes", "liked", "desc"]])
       .then( envelope => {
         let features = envelope.json.products[id].features;
         this.setState({ features }) 

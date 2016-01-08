@@ -12,10 +12,13 @@ Object.assign(FalcorStore, EventEmitter.prototype);
 const id = dispatcher.register(function(action){
   switch(action.type) {
     case "FEATURE_LIKE": 
-      let path = ["products", action.payload.itemId, "features", action.payload.featureIndex, "likes"];
-      FalcorStore.getValue(path)
-        .then(value => FalcorStore.setValue(path, ++value))
-        .catch(error => console.error(error));
+      let path = ["products", action.payload.itemId, "features", action.payload.featureIndex];
+      FalcorStore.getValue(path.concat(["likes"]))
+        .then(value => FalcorStore.set(
+            falcor.Model.pathValue(path.concat(["likes"]), ++value),
+            falcor.Model.pathValue(path.concat(["liked"]), true)  
+        ).subscribe())
+        .catch(error => console.error(error.message));
   }
 });
 FalcorStore.flux = { id };

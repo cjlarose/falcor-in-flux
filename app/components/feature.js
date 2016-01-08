@@ -5,7 +5,10 @@ class Feature extends React.Component {
     return (
       <li>
           <p> {this.props.name} {this.props.desc} </p>
-          <div> {this.props.likes} <a href="#" onClick={this.props.onClick}> Like </a></div> 
+          <div> 
+            {this.props.likes} 
+            {this.props.liked || <a href="#" onClick={this.props.onClick}> Like </a>}
+          </div> 
       </li>
     );
   }
