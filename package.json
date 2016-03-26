@@ -5,7 +5,7 @@
   "main": "app/entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "assets": "cp -r assets/* build/",
+    "assets": "mkdir -p build && cp -r assets/* build/",
     "webpack": "webpack --progress --colors",
     "start": "node node_modules/http-server/bin/http-server build",
     "build": "npm run assets && npm run webpack && npm start"
